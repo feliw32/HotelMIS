@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D377C90-D3AC-467C-893E-3CF55651049F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HotelMIS.View</RootNamespace>
+    <AssemblyName>HotelMIS.View</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Xpo.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1.Design, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1.Design, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1.Design, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1.Design, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.Wizard, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Design, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.1.Extensions, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.1.Reporting.Extensions, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient">
+      <HintPath>..\External Reference\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\FormHelper.cs" />
+    <Compile Include="ViewModel\AvailableRoomViewModel.cs" />
+    <Compile Include="View\Master Data\AppUser\frmAppUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\AppUser\frmAppUser.Designer.cs">
+      <DependentUpon>frmAppUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\AppUser\frmDlgPasswordBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\AppUser\frmDlgPasswordBox.Designer.cs">
+      <DependentUpon>frmDlgPasswordBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\AppUser\frmListAppUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\AppUser\frmListAppUser.Designer.cs">
+      <DependentUpon>frmListAppUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\ChangePassword\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\ChangePassword\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\PriceTypePeriod\frmPriceTypePeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\PriceTypePeriod\frmPriceTypePeriod.Designer.cs">
+      <DependentUpon>frmPriceTypePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\RoomPrice\frmRoomPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\RoomPrice\frmRoomPrice.Designer.cs">
+      <DependentUpon>frmRoomPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentMethod\frmListPaymentMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentMethod\frmListPaymentMethod.Designer.cs">
+      <DependentUpon>frmListPaymentMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentMethod\frmPaymentMethod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentMethod\frmPaymentMethod.Designer.cs">
+      <DependentUpon>frmPaymentMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\SessionProvider.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Master Data\Configuration\frmSystemSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Configuration\frmSystemSetting.Designer.cs">
+      <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\IdentificationType\frmListIdentificationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\IdentificationType\frmListIdentificationType.Designer.cs">
+      <DependentUpon>frmListIdentificationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\IdentificationType\frmIdentificationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\IdentificationType\frmIdentificationType.Designer.cs">
+      <DependentUpon>frmIdentificationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Nationality\frmNationality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Nationality\frmNationality.Designer.cs">
+      <DependentUpon>frmNationality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Nationality\frmListNationality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Nationality\frmListNationality.Designer.cs">
+      <DependentUpon>frmListNationality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Guest\frmListGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Guest\frmListGuest.Designer.cs">
+      <DependentUpon>frmListGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Guest\frmGuest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Guest\frmGuest.Designer.cs">
+      <DependentUpon>frmGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentType\frmListPaymentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentType\frmListPaymentType.Designer.cs">
+      <DependentUpon>frmListPaymentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentType\frmPaymentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\PaymentType\frmPaymentType.Designer.cs">
+      <DependentUpon>frmPaymentType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Price Type\frmListPriceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Price Type\frmListPriceType.Designer.cs">
+      <DependentUpon>frmListPriceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Price Type\frmPriceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Price Type\frmPriceType.Designer.cs">
+      <DependentUpon>frmPriceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Room\frmDlgMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Room\frmDlgMaintenance.Designer.cs">
+      <DependentUpon>frmDlgMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Room\frmRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Room\frmRoom.Designer.cs">
+      <DependentUpon>frmRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\Room\frmListRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\Room\frmListRoom.Designer.cs">
+      <DependentUpon>frmListRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Report\frmReportDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\frmReportDlg.Designer.cs">
+      <DependentUpon>frmReportDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Report\frmReportParameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\frmReportParameter.Designer.cs">
+      <DependentUpon>frmReportParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Report\frmReportDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\frmReportDesign.Designer.cs">
+      <DependentUpon>frmReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Report\frmListReportDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\frmListReportDesign.Designer.cs">
+      <DependentUpon>frmListReportDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Report\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Report\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlBoard\frmControlBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ControlBoard\frmControlBoard.Designer.cs">
+      <DependentUpon>frmControlBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\RoomType\frmListRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\RoomType\frmListRoomType.Designer.cs">
+      <DependentUpon>frmListRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\RoomType\frmRoomType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\RoomType\frmRoomType.Designer.cs">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\UserRole\frmListUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\UserRole\frmListUserRole.Designer.cs">
+      <DependentUpon>frmListUserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master Data\UserRole\frmUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Master Data\UserRole\frmUserRole.Designer.cs">
+      <DependentUpon>frmUserRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\CheckOut\frmDlgCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\CheckOut\frmDlgCheckOut.Designer.cs">
+      <DependentUpon>frmDlgCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\CheckOut\frmListCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\CheckOut\frmListCheckOut.Designer.cs">
+      <DependentUpon>frmListCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\CheckOut\frmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\CheckOut\frmCheckOut.Designer.cs">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Payment\frmDlgVoidReason.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Payment\frmDlgVoidReason.Designer.cs">
+      <DependentUpon>frmDlgVoidReason.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Payment\frmListPaymentVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Payment\frmListPaymentVoucher.Designer.cs">
+      <DependentUpon>frmListPaymentVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Payment\frmPaymentVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Payment\frmPaymentVoucher.Designer.cs">
+      <DependentUpon>frmPaymentVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Reservation\frmListReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Reservation\frmListReservation.Designer.cs">
+      <DependentUpon>frmListReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Reservation\frmReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Reservation\frmReservation.Designer.cs">
+      <DependentUpon>frmReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmDlgMasterStay2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmDlgMasterStay2.Designer.cs">
+      <DependentUpon>frmDlgMasterStay2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmDlgMasterStay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmDlgMasterStay.Designer.cs">
+      <DependentUpon>frmDlgMasterStay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmListMasterStay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmListMasterStay.Designer.cs">
+      <DependentUpon>frmListMasterStay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmMasterStay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmMasterStay.Designer.cs">
+      <DependentUpon>frmMasterStay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmStay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\Stay\frmStay.Designer.cs">
+      <DependentUpon>frmStay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\RoomService\frmListRoomService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\RoomService\frmListRoomService.Designer.cs">
+      <DependentUpon>frmListRoomService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transaction\RoomService\frmRoomService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transaction\RoomService\frmRoomService.Designer.cs">
+      <DependentUpon>frmRoomService.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="View\Master Data\AppUser\frmAppUser.resx">
+      <DependentUpon>frmAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\AppUser\frmDlgPasswordBox.resx">
+      <DependentUpon>frmDlgPasswordBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\AppUser\frmListAppUser.resx">
+      <DependentUpon>frmListAppUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\ChangePassword\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\PriceTypePeriod\frmPriceTypePeriod.resx">
+      <DependentUpon>frmPriceTypePeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\RoomPrice\frmRoomPrice.resx">
+      <DependentUpon>frmRoomPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\PaymentMethod\frmListPaymentMethod.resx">
+      <DependentUpon>frmListPaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\PaymentMethod\frmPaymentMethod.resx">
+      <DependentUpon>frmPaymentMethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\Master Data\Configuration\frmSystemSetting.resx">
+      <DependentUpon>frmSystemSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\IdentificationType\frmListIdentificationType.resx">
+      <DependentUpon>frmListIdentificationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\IdentificationType\frmIdentificationType.resx">
+      <DependentUpon>frmIdentificationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Nationality\frmNationality.resx">
+      <DependentUpon>frmNationality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Nationality\frmListNationality.resx">
+      <DependentUpon>frmListNationality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Guest\frmListGuest.resx">
+      <DependentUpon>frmListGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Guest\frmGuest.resx">
+      <DependentUpon>frmGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\PaymentType\frmListPaymentType.resx">
+      <DependentUpon>frmListPaymentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\PaymentType\frmPaymentType.resx">
+      <DependentUpon>frmPaymentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Price Type\frmListPriceType.resx">
+      <DependentUpon>frmListPriceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Price Type\frmPriceType.resx">
+      <DependentUpon>frmPriceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Room\frmDlgMaintenance.resx">
+      <DependentUpon>frmDlgMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Room\frmRoom.resx">
+      <DependentUpon>frmRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\Room\frmListRoom.resx">
+      <DependentUpon>frmListRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\frmReportDlg.resx">
+      <DependentUpon>frmReportDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\frmReportParameter.resx">
+      <DependentUpon>frmReportParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\frmReportDesign.resx">
+      <DependentUpon>frmReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\frmListReportDesign.resx">
+      <DependentUpon>frmListReportDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Report\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ControlBoard\frmControlBoard.resx">
+      <DependentUpon>frmControlBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\RoomType\frmListRoomType.resx">
+      <DependentUpon>frmListRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\RoomType\frmRoomType.resx">
+      <DependentUpon>frmRoomType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\UserRole\frmListUserRole.resx">
+      <DependentUpon>frmListUserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Master Data\UserRole\frmUserRole.resx">
+      <DependentUpon>frmUserRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\CheckOut\frmDlgCheckOut.resx">
+      <DependentUpon>frmDlgCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\CheckOut\frmListCheckOut.resx">
+      <DependentUpon>frmListCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\CheckOut\frmCheckOut.resx">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Payment\frmDlgVoidReason.resx">
+      <DependentUpon>frmDlgVoidReason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Payment\frmListPaymentVoucher.resx">
+      <DependentUpon>frmListPaymentVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Payment\frmPaymentVoucher.resx">
+      <DependentUpon>frmPaymentVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Reservation\frmListReservation.resx">
+      <DependentUpon>frmListReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Reservation\frmReservation.resx">
+      <DependentUpon>frmReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Stay\frmDlgMasterStay2.resx">
+      <DependentUpon>frmDlgMasterStay2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Stay\frmDlgMasterStay.resx">
+      <DependentUpon>frmDlgMasterStay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Stay\frmListMasterStay.resx">
+      <DependentUpon>frmListMasterStay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Stay\frmMasterStay.resx">
+      <DependentUpon>frmMasterStay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\Stay\frmStay.resx">
+      <DependentUpon>frmStay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\RoomService\frmListRoomService.resx">
+      <DependentUpon>frmListRoomService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transaction\RoomService\frmRoomService.resx">
+      <DependentUpon>frmRoomService.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\CheckInReceipt.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\CheckOutHistory.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\WorkingShiftSummary.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\DepositBack.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\DepositPay.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\DataSources\HotelMIS.Model.SystemSetting.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Report\RoomBack.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Report\RoomPay.repx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HotelMIS.Model\HotelMIS.Model.csproj">
+      <Project>{BEE1CCBC-51B2-4F71-9D8B-00A2D62746DD}</Project>
+      <Name>HotelMIS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

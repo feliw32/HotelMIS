@@ -1,0 +1,276 @@
+using System;
+using System.Collections.Generic;
+using DevExpress.Data.Filtering;
+using DevExpress.Persistent.Base;
+using DevExpress.Xpo;
+
+namespace HotelMIS.Model
+{
+    [DefaultClassOptions]
+    public class Reservation : TransactionBase
+    {
+        private DateTime _dateCheckIn;
+        private DateTime _dateCheckOut;
+        private Double _durationInDays;
+        private Double _durationInHours;
+        private Guest _guest;
+        private String _guestName;
+        private String _note;
+        private PriceType _priceType;
+        private RoomType _roomType;
+        private GlobalVar.TransactionStatus _status;
+
+        public Reservation(Session session)
+            : base(session)
+        {
+            // This constructor is used when an object is loaded from a persistent storage.
+            // Do not place any code here or place it only when the IsLoading property is false:
+            // if (!IsLoading){
+            //    It is now OK to place your initialization code here.
+            // }
+            // or as an alternative, move your initialization code into the AfterConstruction method.
+        }
+
+        public XPCollection<Guest> AvailableGuest
+        {
+            get { return new XPCollection<Guest>(Session); }
+        }
+
+        public void CancelRecord()
+        {
+            Status = GlobalVar.TransactionStatus.Cancel;
+            DeleteSchedule();
+        }
+
+        public XPCollection<PriceType> AvailablePriceType
+        {
+            get
+            {
+                if (RoomType != null)
+                    return new XPCollection<PriceType>(Session, new BinaryOperator("RoomType", RoomType));
+                return null;
+            }
+        }
+
+        public XPCollection<RoomType> AvailableRoomType
+        {
+            get { return new XPCollection<RoomType>(Session); }
+        }
+
+        public DateTime DateCheckIn
+        {
+            get { return _dateCheckIn; }
+            set
+            {
+                SetPropertyValue("DateCheckIn", ref _dateCheckIn, value);
+            }
+        }
+
+        public DateTime DateCheckOut
+        {
+            get { return _dateCheckOut; }
+            set
+            {
+                SetPropertyValue("DateCheckOut", ref _dateCheckOut, value);
+            }
+        }
+
+        public Double DurationInDays
+        {
+            get { return _durationInDays; }
+            set { SetPropertyValue("DurationInDays", ref _durationInDays, value); }
+        }
+
+        public Double DurationInHours
+        {
+            get { return _durationInHours; }
+            set { SetPropertyValue("DurationInHours", ref _durationInHours, value); }
+        }
+
+        public Guest Guest
+        {
+            get { return _guest; }
+            set
+            {
+                SetPropertyValue("Guest", ref _guest, value);
+                if (Guest != null) { GuestName = Guest.Name; }
+            }
+        }
+
+        public String GuestName
+        {
+            get { return _guestName; }
+            set { SetPropertyValue("GuestName", ref _guestName, value); }
+        }
+
+        [NonPersistent()]
+        public Guid GuestOid
+        {
+            get { if (Guest != null) { return Guest.Oid; } else { return Guid.Empty; } }
+            set { Guest = Session.GetObjectByKey<Guest>(value); }
+        }
+
+        public Boolean IsCompany
+        {
+            get
+            {
+                if (Guest != null)
+                    return Guest.IsCompany;
+                return false;
+            }
+        }
+
+        public String Note
+        {
+            get { return _note; }
+            set { SetPropertyValue("Note", ref _note, value); }
+        }
+
+        public PriceType PriceType
+        {
+            get { return _priceType; }
+            set { SetPropertyValue("PriceType", ref _priceType, value); }
+        }
+
+        public String PriceTypeName
+        {
+            get
+            {
+                if (PriceType != null)
+                    return PriceType.Name;
+                return null;
+            }
+        }
+
+        [NonPersistent()]
+        public Guid PriceTypeOid
+        {
+            get { if (PriceType != null) { return PriceType.Oid; } else { return Guid.Empty; } }
+            set { PriceType = Session.GetObjectByKey<PriceType>(value); }
+        }
+
+        public RoomType RoomType
+        {
+            get { return _roomType; }
+            set { SetPropertyValue("RoomType", ref _roomType, value); }
+        }
+
+        [NonPersistent()]
+        public Guid RoomTypeOid
+        {
+            get { if (RoomType != null) { return RoomType.Oid; } else { return Guid.Empty; } }
+            set { RoomType = Session.GetObjectByKey<RoomType>(value); }
+        }
+
+        public GlobalVar.TransactionStatus Status
+        {
+            get { return _status; }
+            set { SetPropertyValue("Status", ref _status, value); }
+        }
+
+        public static XPCollection<Reservation> DataCollection(Session prmSession)
+        {
+            return new XPCollection<Reservation>(prmSession);
+        }
+
+        public override void AfterConstruction()
+        {
+            base.AfterConstruction();
+
+            // Place here your initialization code.
+        }
+
+        public void DeleteSchedule()
+        {
+            Session.ExecuteNonQuery("DELETE FROM RoomScheduleDetail WHERE RoomSchedule IN(SELECT Oid FROM RoomSchedule WHERE Reference = '" + this.Oid.ToString() + "')");
+            Session.ExecuteNonQuery("DELETE FROM RoomSchedule WHERE Reference = '" + this.Oid.ToString() + "'");
+        }
+
+        public void SubmitSchedule()
+        {
+            if (Status == GlobalVar.TransactionStatus.Entry)
+            {
+                RoomSchedule objRoomSchedule = new RoomSchedule(Session);
+                objRoomSchedule.Reference = this;
+                objRoomSchedule.Room = null;
+                objRoomSchedule.Subject = GuestName;
+                objRoomSchedule.Description =   "Reservation " + RoomType.Name + " " + PriceType.Name + " From : " + DateCheckIn.ToString("dd-MM-yyyy HH:mm") + " - " + DateCheckOut.ToString("dd-MM-yyyy HH:mm") + "\r\n" +
+                                                "Duration In Days: " + DurationInDays + "\r\n" +
+                                                "Duration In Hours: " + DurationInHours;
+                objRoomSchedule.ScheduleType = GlobalVar.ScheduleType.Reservation;
+                objRoomSchedule.From = GlobalVar.ClearSeconds(DateCheckIn);
+                objRoomSchedule.Until = GlobalVar.ClearSeconds(DateCheckOut);
+                objRoomSchedule.LabelId = GlobalVar.LabelColor.LightYellow;
+                objRoomSchedule.ResourceId = "Reservation";
+                objRoomSchedule.Save();
+
+                List<DateRange> lsDate = GlobalVar.GenerateDateList(DateCheckIn, DateCheckOut);
+
+                foreach (DateRange objDate in lsDate)
+                {
+                    RoomScheduleDetail objRoomScheduleDetail = new RoomScheduleDetail(Session);
+                    objRoomScheduleDetail.RoomSchedule = objRoomSchedule;
+                    objRoomScheduleDetail.Room = null;
+                    objRoomScheduleDetail.ScheduleType = GlobalVar.ScheduleType.Reservation;
+                    objRoomScheduleDetail.TransDate = objDate.From.Date;
+                    objRoomScheduleDetail.From = objDate.From;
+                    objRoomScheduleDetail.Until = objDate.Until;
+                    objRoomScheduleDetail.IsAllDay = objDate.IsAllDay;
+                    objRoomScheduleDetail.Save();
+                }
+            }
+        }
+
+        public Stay CheckInReservation()
+        {
+            Stay oNewStay = new Stay(Session);
+            oNewStay.CheckInBy = Session.GetObjectByKey<AppUser>(GlobalVar.CurrentLoginUser.Oid);
+            oNewStay.Guest = Guest;
+            oNewStay.GuestName = GuestName;
+            oNewStay.RoomType = RoomType;
+            oNewStay.PriceType = PriceType;
+            oNewStay.DurationInDays = DurationInDays;
+            oNewStay.DurationInHours = DurationInHours;
+            oNewStay.DateCheckIn = GlobalVar.ClearSeconds(DateTime.Now);
+            oNewStay.GetUntilTime();
+            oNewStay.Note = Note;
+            oNewStay.Reservation = this;
+            oNewStay.Status = GlobalVar.TransactionStatus.Entry;
+            return oNewStay;
+        }
+
+        public bool IsReservationReferencedInStay()
+        {
+            bool flag = false;
+            Stay oStay = Session.FindObject<Stay>(PersistentCriteriaEvaluationBehavior.InTransaction,
+                GroupOperator.And(new BinaryOperator("Reservation.Oid", this.Oid), new BinaryOperator("Status", GlobalVar.TransactionStatus.Cancel, BinaryOperatorType.NotEqual)));
+            if (oStay != null)
+            {
+                flag = true;
+            }
+            return flag;
+        }
+
+        public override string ToString()
+        {
+            string strGuestName = "";
+            string strDateCheckIn = "";
+            string strDateCheckOut = "";
+
+            if (GuestName != null) { strGuestName = GuestName; }
+            if (DateCheckIn != null && DateCheckIn != new DateTime()) { strDateCheckIn = DateCheckIn.ToString("dd-MM-yyyy HH:mm"); }
+            if (DateCheckOut != null && DateCheckOut != new DateTime()) { strDateCheckOut = DateCheckOut.ToString("dd-MM-yyyy HH:mm"); }
+
+            return "Reservation " + strGuestName + " Date : " + strDateCheckIn + " - " + strDateCheckOut;
+        }
+
+        protected override void OnSaving()
+        {
+            base.OnSaving();
+            if (Session.IsNewObject(this) && !IsDeleted)
+            {
+                WorkingShiftDetail.CreateWorkingLog(Session, "Save " + this.ToString(), 0);
+            }
+        }
+    }
+}
