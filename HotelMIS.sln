@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelMIS.Model", "HotelMIS.Model\HotelMIS.Model.csproj", "{BEE1CCBC-51B2-4F71-9D8B-00A2D62746DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelMIS.View", "HotelMIS.View\HotelMIS.View.csproj", "{2D377C90-D3AC-467C-893E-3CF55651049F}"
